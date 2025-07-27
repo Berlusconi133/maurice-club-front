@@ -1,0 +1,112 @@
+.morne {
+height: 6 6vh;
+width: 88vw;
+border-radius: 8px;
+object-fit: cover;
+}
+
+.imageContainer {
+overflow: auto;
+position: relative;
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+.personalize {
+position: absolute;
+top: 10%;
+left: 50%;
+transform: translate(-50%, -50%);
+padding: 24px 68px;
+background-color: rgb(0, 76, 255);
+color: white;
+border: none;
+border-radius: 18px;
+cursor: pointer;
+box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+font-size: 16px;
+}
+
+.pack {
+position: relative;
+top: -60px; /* ← chevauche l'image */
+display: flex;
+flex-direction: row;
+gap: 55px;
+justify-content: center;
+z-index: 2;
+}
+
+.divMango {
+height: 45vh;
+width: 20vw;
+background-color: white;
+border-radius: 15px;
+box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+font-weight: bold;
+padding: 16px;
+z-index: 2;
+}
+
+.divCorail {
+height: 45vh;
+width: 20vw;
+background-color: white;
+border-radius: 15px;
+box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+font-weight: bold;
+padding: 16px;
+z-index: 2;
+}
+
+.divLuxe {
+height: 45vh;
+width: 20vw;
+background-color: white;
+border-radius: 15px;
+box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+font-weight: bold;
+padding: 16px;
+z-index: 2;
+
+}
+.activiteButton{
+position: absolute;
+top: 20%;
+left: 50%;
+transform: translate(-50%, -50%);
+padding: 18px 38px;
+background-color: rgb(0, 76, 255);
+color: white;
+border: none;
+border-radius: 18px;
+cursor: pointer;
+box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+font-size: 10px;
+}
+.carrouselOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 88vw; /* même taille que ton image */
+  height: 66vh; /* même hauteur que ton image */
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5); /* effet foncé transparent */
+  border-radius: 8px;
+}
