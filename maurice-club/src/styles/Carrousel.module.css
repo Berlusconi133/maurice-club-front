@@ -1,62 +1,124 @@
 .carrouselContainer {
-  perspective: 1000px;
+  perspective: 1200px;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  position: relative;
+  justify-content: center;
   margin-top: 80px;
+  position: relative;
 }
 
 .carousel {
-  width: 200px;
-  height: 200px;
+  width: 320px;
+  height: 350px;
   position: relative;
   transform-style: preserve-3d;
-  animation: rotate 12s linear infinite;
 }
 
 .item {
-  width: 150px;
-  height: 150px;
+  width: 260px;
+  height: 320px;
   position: absolute;
-  top: 25px;
-  left: 25px;
-  transform-origin: center center -150px;
-  border-radius: 10px;
+  top: 0;
+  left: 50%;
+  border-radius: 12px;
+  background: white;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  transform-origin: center center -250px;
+  transform-style: preserve-3d;
+  padding: 10px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: translateX(-50%);
+  transition: transform 0.6s ease, opacity 0.6s ease, filter 0.6s ease;
+}
+
+.image {
+  width: 240px;
+  height: 150px;
+  border-radius: 8px;
   object-fit: cover;
-  opacity: 0.5;
-  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  margin-bottom: 15px;
 }
 
-.item:nth-child(1) { transform: rotateY(0deg) translateZ(150px); }
-.item:nth-child(2) { transform: rotateY(90deg) translateZ(150px); }
-.item:nth-child(3) { transform: rotateY(180deg) translateZ(150px); }
-.item:nth-child(4) { transform: rotateY(270deg) translateZ(150px); }
-
-.active {
-  opacity: 1;
-  transform: scale(1.05) translateZ(160px);
-  z-index: 1;
+.textContainer {
+  text-align: center;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-@keyframes rotate {
-  from { transform: rotateY(0deg); }
-  to   { transform: rotateY(360deg); }
+.h3{
+  margin: 0 0 8px;
+  font-size: 1.25rem;
+  color: #222;
+}
+
+.p{
+  margin: 0 0 8px;
+  color: #555;
+  font-size: 1rem;
+}
+
+.price {
+  font-weight: bold;
+  color: #008000;
+  font-size: 1.1rem;
+}
+
+.btnAdd {
+  background-color: #0080ff;
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btnAdd:hover {
+  background-color: #005bb5;
 }
 
 .nav {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.6);
   color: white;
   font-size: 2rem;
   border: none;
   padding: 10px 20px;
-  margin: 10px;
+  margin: 0 15px;
   cursor: pointer;
   border-radius: 50%;
   transition: background-color 0.3s ease;
+  user-select: none;
 }
 
 .nav:hover {
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.8);
 }
+.closeButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(0,0,0,0.6);
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  line-height: 28px;
+  text-align: center;
+  z-index: 10;
+  transition: background-color 0.3s ease;
+}
+
+.closeButton:hover {
+  background: rgba(0,0,0,0.8);
+}
+      

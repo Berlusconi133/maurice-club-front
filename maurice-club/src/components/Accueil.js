@@ -3,6 +3,7 @@ import react from "react";
 import { useState } from "react";
 import styles from '../styles/Accueil.module.css'
 import Carrousel from "./Carrousel";
+import Link from 'next/link';
 
 function Accueil() {
   const [showCarrousel, setShowCarrousel] = useState(false);
@@ -29,6 +30,7 @@ function Accueil() {
       )}
       <div className={styles.pack}>
         <div className={styles.divMango}>
+            <Link href="/offre/PageMango">Go to profile page</Link>
           <span>Pack Mango</span>
           <p>Vol économique</p>
         </div>
