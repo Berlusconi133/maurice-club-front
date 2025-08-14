@@ -1,19 +1,33 @@
 import styles from '../styles/Header.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faSearch } from '@fortawesome/free-solid-svg-icons';
-import { faUser } from '@fortawesome/free-solid-svg-icons';
+import { Search } from 'lucide-react';
+import { AlignJustify } from "lucide-react";
+import { Handbag } from 'lucide-react';
+import { User } from 'lucide-react';
+import { Button, Popover } from 'antd';
+import React from 'react';
+import Link from 'next/link';
 
 
+const content = (
+    <div className={styles.monpopover}>
+        <button className={styles.buttonPopover}>Comparateur de vols ✈️</button>
+        <button className={styles.buttonPopover}>Voiture de location 🚙</button>
+        <button className={styles.buttonPopover}>Hébergements 🏠</button>
+        <button className={styles.buttonPopover}>Activités 🚤</button>
+    </div>
+)
 function Header() {
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
 
     return (
         <div className={styles.header}>
             <div className={styles.containerLogoMenu}>
-                <img src='/logomaurice-club.png' alt='logo' className={styles.logo} />
-                <button className={styles.hideMenu}>
-                    <FontAwesomeIcon className={styles.firstIcon} icon={faBars} />
-                </button>
+                <Link href="/">
+                    <img src="/MauriceClubLogo.png" alt="logo" className={styles.logo} />
+                </Link>
+                <Popover content={content} title="Menu" trigger="hover" >
+                    <button className={styles.iconAlign}>< AlignJustify /></button>
+                </Popover>
             </div>
             <div className={styles.contactContainer}>
                 <p className={styles.contactTitle}>Demandes et Réservations </p>
@@ -23,16 +37,21 @@ function Header() {
                 </div>
             </div>
             <div className={styles.inputDiv}>
-                <button className={styles.userButton}><FontAwesomeIcon className={styles.userIcon} icon={faUser} />
+                <button className={styles.userButton}>
+                    <User />
                 </button>
-                <div className={styles.inputComplete}>
-                    <input  className={styles.linput} type="text" placeholder="Rechercher..." />
+                <button className={styles.userButton}>
+                    <Handbag />
+                </button>
+                <div className={styles.inputWrapper}>
+                    <input className={styles.linput} type="text" placeholder="Rechercher..." />
                     <button className={styles.searchButton}>
-                        <FontAwesomeIcon className={styles.searchButton} icon={faSearch}/>
+                        <Search />
                     </button>
                 </div>
 
-            </div >
+            </div>
+
         </div >
 
     )

@@ -1,124 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap');
+
 .carrouselContainer {
-  perspective: 1200px;
+  perspective: 2000px;
+  /* Perspective plus lointaine pour un effet 3D moins agressif */
   display: flex;
   align-items: center;
   justify-content: center;
   margin-top: 80px;
   position: relative;
+  font-family: var(--font-primary);
+  width: 100%;
+  
 }
 
 .carousel {
-  width: 320px;
-  height: 350px;
+  width: 280px;
+  height: 400px;
   position: relative;
   transform-style: preserve-3d;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  /* Transition plus longue et douce */
 }
 
+/* --- Cartes du carrousel --- */
+
 .item {
-  width: 260px;
-  height: 320px;
+  width: 500px;
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 16px;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  padding: 0;
   position: absolute;
   top: 0;
-  left: 50%;
-  border-radius: 12px;
-  background: white;
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
-  cursor: pointer;
-  transform-origin: center center -250px;
-  transform-style: preserve-3d;
-  padding: 10px;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  transform: translateX(-50%);
-  transition: transform 0.6s ease, opacity 0.6s ease, filter 0.6s ease;
+  left: 0;
+  z-index: 1;
+  transform: scale(0.85);
+  transition: transform 0.7s ease, box-shadow 0.7s ease;
+  opacity: 1;
+}
+
+.item.active {
+  transform: scale(1);
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.15);
 }
 
 .image {
-  width: 240px;
-  height: 150px;
-  border-radius: 8px;
+  width: 50%;
+  height: 100%;
   object-fit: cover;
-  margin-bottom: 15px;
 }
 
 .textContainer {
-  text-align: center;
-  flex-grow: 1;
+  width: 50%;
+  padding: 20px;
+  text-align: left;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
 }
 
-.h3{
+
+.textContainer h3 {
   margin: 0 0 8px;
-  font-size: 1.25rem;
-  color: #222;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--color-text-strong);
 }
 
-.p{
-  margin: 0 0 8px;
-  color: #555;
-  font-size: 1rem;
+.textContainer p {
+  margin: 0 0 12px;
+  color: var(--color-text-body);
+  font-size: 0.95rem;
+  line-height: 1.5;
 }
 
 .price {
-  font-weight: bold;
-  color: #008000;
-  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-accent);
+  font-size: 1.2rem;
+  margin-bottom: 12px;
 }
 
 .btnAdd {
-  background-color: #0080ff;
+  background-color: transparent;
   border: none;
-  color: white;
-  padding: 10px 15px;
+  /* Plus de bordure */
+  color: black;
+  /* Texte noir */
   font-size: 1rem;
-  border-radius: 6px;
+  font-weight: 600;
+  padding: 0;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: color 0.3s ease;
+  font-family: 'Segoe UI', sans-serif;
 }
 
 .btnAdd:hover {
-  background-color: #005bb5;
+  text-decoration: underline;
+  text-underline-offset: 6px;
 }
 
 .nav {
-  background-color: rgba(0, 0, 0, 0.6);
-  color: white;
-  font-size: 2rem;
+  background-color: transparent;
+  color: #191919;
+  /* Couleur grise et discrète */
+  font-size: 2.5rem;
   border: none;
-  padding: 10px 20px;
-  margin: 0 15px;
+  padding: 0 20px;
   cursor: pointer;
   border-radius: 50%;
-  transition: background-color 0.3s ease;
+  transition: color 0.3s ease, transform 0.3s ease;
   user-select: none;
+  position: relative;
+  z-index: 5;
 }
 
 .nav:hover {
-  background-color: rgba(0, 0, 0, 0.8);
+  color: var(--color-text-strong);
+  /* Devient plus visible au survol */
+  transform: scale(1.1);
 }
-.closeButton {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: rgba(0,0,0,0.6);
-  border: none;
-  color: white;
-  font-size: 1.5rem;
-  cursor: pointer;
-  border-radius: 50%;
-  width: 30px;
-  height: 30px;
-  line-height: 28px;
-  text-align: center;
-  z-index: 10;
-  transition: background-color 0.3s ease;
-}
-
-.closeButton:hover {
-  background: rgba(0,0,0,0.8);
-}
-      

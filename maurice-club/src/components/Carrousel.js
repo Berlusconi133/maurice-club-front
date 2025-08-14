@@ -32,57 +32,52 @@ const slides = [
 export default function Carrousel() {
   const [index, setIndex] = useState(0);
   const [isClient, setIsClient] = useState(false);
-  const [visible, setVisible] = useState(true);
 
   useEffect(() => {
     setIsClient(true);
   }, []);
 
-  if (!isClient) return null;
+  if (!isClient) return null; // Prévient les erreurs d'hydratation SSR
 
   const prev = () => {
-    setIndex((index - 1 + slides.length) % slides.length);
+    setIndex((prevIndex) => (prevIndex - 1 + slides.length) % slides.length);
   };
 
   const next = () => {
-    setIndex((index + 1) % slides.length);
+    setIndex((prevIndex) => (prevIndex + 1) % slides.length);
   };
 
+  const itemDistance = 280; // Correspond à la largeur de .carousel
 
-    // Handler pour cacher le carrousel au scroll
-    const handleScroll = () => {
-      setVisible(false);
-      window.removeEventListener('scroll', handleScroll); // on enlève le listener après la première disparition
-    };
-
-
-    
   return (
-    
     <div className={styles.carrouselContainer}>
       <button onClick={prev} className={styles.nav}>‹</button>
 
       <div className={styles.carousel}>
         {slides.map((slide, i) => {
           const offset = (i - index + slides.length) % slides.length;
-          const rotationY = offset * 90;
+          const rotationY = (offset * 360) / slides.length; // Calcule l'angle pour n'importe quel nombre de slides
+          const isActive = i === index;
 
           const style = {
-            transform: `rotateY(${rotationY}deg) translateZ(250px)`,
-            opacity: offset === 0 ? 1 : 0.5,
-            filter: offset === 0 ? 'drop-shadow(0 0 10px rgba(0,0,0,0.6))' : 'none',
-            zIndex: offset === 0 ? 2 : 1,
-            transition: 'transform 0.6s ease, opacity 0.6s ease, filter 0.6s ease',
+            transform: `rotateY(${rotationY}deg) translateZ(${itemDistance}px)`,
+            zIndex: isActive ? slides.length : slides.length - offset,
           };
+          
+          // Combine la classe de base avec la classe 'active' si nécessaire
+          const itemClasses = `${styles.item} ${isActive ? styles.active : ''}`;
 
           return (
-            <div key={i} className={styles.item} style={style}>
+            <div key={i} className={itemClasses} style={style}>
               <img src={slide.src} alt={slide.title} className={styles.image} />
               <div className={styles.textContainer}>
+                {/* On n'a plus besoin de classes ici car le CSS cible les balises */}
                 <h3>{slide.title}</h3>
                 <p>{slide.description}</p>
-                <p className={styles.price}>{slide.price}</p>
-                <button className={styles.btnAdd}>Ajouter au panier</button>
+                <div>
+                  <p className={styles.price}>{slide.price}</p>
+                  <button className={styles.btnAdd}>Ajouter au panier</button>
+                </div>
               </div>
             </div>
           );

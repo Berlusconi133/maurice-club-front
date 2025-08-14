@@ -1,0 +1,260 @@
+.principalDiv {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 40px auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  padding: 0 20px;
+}
+
+.btn {
+  background-color: #ff6f61;
+  color: white;
+  border: none;
+  padding: 12px 28px;
+  font-size: 1rem;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #e65b4e;
+}
+
+.main {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.part {
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  border-color: 1px solid #000000;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.part:hover {
+  transform: translateY(-5px);
+}
+
+.image {
+  width: 35%;
+  height: 100%;
+  border-radius: 15px 0 0 15px;
+  object-fit: cover;
+}
+
+.text h3 {
+  margin: 0 0 8px 0;
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: #ff612c;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.text p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.4;
+  color: #555;
+}
+
+.header {
+  height: 16vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  border-bottom: 1px solid #ccc;
+}
+
+.containerLogoMenu {
+  height: 16vh;
+  width: 29vw;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  height: 13vh;
+  width: 16vw;
+  margin: 0;
+  padding: 3px;
+  margin-left: 4%;
+}
+
+.contactContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-family: sans-serif;
+  gap: 10px;
+  justify-content: flex-start;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+
+.inputDiv {
+  height: auto;
+  width: auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.linput {
+  display: flex;
+  align-items: center;
+  width: 300px;
+  background-color: white;
+  border-radius: 17px;
+  border: 1px solid #ccc;
+  padding: 12px 19px;
+}
+
+.contactButton {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  border: none;
+  background-color: #f4f4f4;
+  border-radius: 30px;
+  padding: 2px 3px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.phoneIcon {
+  background-color: #86b63b;
+  color: white;
+  padding: 8px;
+  border-radius: 50%;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.phoneNumber {
+  color: #86b63b;
+  font-weight: bold;
+  font-size: 18px;
+  border: none;
+}
+
+.firstIcon {
+  border: none;
+  font-size: 24px;
+  transform: scaleX(0.85);
+  transition: all 0.3s ease
+}
+
+.hideMenu {
+  height: 5vh;
+  width: 1.5vw;
+  border: none;
+  background-color: white;
+  align-items: center;
+}
+
+.searchButton {
+  border: none;
+  background: transparent;
+}
+
+.userButton {
+  height: 2vh;
+  width: 1.5vw;
+  border: none;
+  background: transparent;
+  box-shadow: none;
+  display: flex;
+  color: rgba(28, 28, 28, 0.877);
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+.inputComplete {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border: none;
+  padding: 6px 12px;
+  background-color: white;
+  width: 300px;
+}
+
+.description {
+  height: auto;
+  width: 50vw;
+  display: flex;
+  flex-direction: column;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  gap: 25px;
+  border: 1px solid #000000;
+  padding: 25px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.buttonPack {
+  background-color: transparent;
+  color: #000000;
+  border: 1px solid #000000;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.buttonPack:hover {
+  background-color: #7da9eb;
+}
+
+.itemsPack {
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.outPack {
+  padding: 20px;
+  border: none;
+  background-color: transparent;
+  height: auto;
+  width: auto;
+  cursor: pointer;
+  color: #000000;
+  margin-left: 43px;
+}
+.backButton {
+  display: flex;
+  align-items: center;
+  padding: 6px;
+  height: 28px;
+  width: auto;;
+}
